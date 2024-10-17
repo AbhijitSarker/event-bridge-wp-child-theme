@@ -1,1 +1,1 @@
-Event Bridge - WP Child Theme
+# Event Bridge - WP Child Theme
