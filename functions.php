@@ -25,6 +25,12 @@ function eb_css_js_file_calling(){
 add_action( 'wp_enqueue_scripts', 'eb_css_js_file_calling' );
 
 
+// Google Fonts Enqueue
+function eb_add_google_fonts(){
+  wp_enqueue_style('eb_google_fonts', 'https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Oswald&display=swap', false);
+}
+add_action('wp_enqueue_scripts', 'eb_add_google_fonts');
+
 
 //Theme Function
 function eb_customizar_register($wp_customize){
@@ -47,3 +53,7 @@ function eb_customizar_register($wp_customize){
 }
 
 add_action('customize_register', 'eb_customizar_register');
+
+
+// Menu Register
+register_nav_menu( 'main_menu', __('Main Menu', 'EventBridge') );
