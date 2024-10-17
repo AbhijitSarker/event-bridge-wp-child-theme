@@ -14,7 +14,14 @@
 
 
 <body <?php body_class()?> >
-  
+    <div id="header_area">
+      <div class="container">
+        <div class="row">
+          <a href=""><img src="<?php echo get_theme_mod('eb_logo'); ?>" alt=""></a>
+          <div class="col-md-3"></div>
+        </div>
+      </div>
+    </div>
 
 <?php wp_footer(  )?>
 

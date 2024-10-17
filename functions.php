@@ -23,3 +23,27 @@ function eb_css_js_file_calling(){
 
 }
 add_action( 'wp_enqueue_scripts', 'eb_css_js_file_calling' );
+
+
+
+//Theme Function
+function eb_customizar_register($wp_customize){
+  $wp_customize->add_section('eb_header_area', array(
+    'title' =>__('Header Area', 'EventBridge'),
+    'description' => 'If you interested to update your header area, you can do it here.'
+  ));
+
+  $wp_customize->add_setting('eb_logo', array(
+    'default' => get_bloginfo('template_directory') . '/img/logo.png',
+  ));
+
+  $wp_customize-> add_control(new WP_Customize_Image_Control($wp_customize, 'eb_logo', array(
+    'label' => 'Logo Upload',
+    'description' => 'If you interested to change or update your logo you can do it.',
+    'setting' => 'eb_logo',
+    'section' => 'eb_header_area',
+  ) ));
+
+}
+
+add_action('customize_register', 'eb_customizar_register');
