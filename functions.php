@@ -76,3 +76,17 @@ add_action('customize_register', 'eb_customizar_register');
 
 // Menu Register
 register_nav_menu( 'main_menu', __('Main Menu', 'EventBridge') );
+
+
+function eb_nav_description( $item_output, $item, $args ) {
+  // Check if link_after exists and is not null; otherwise provide a default value
+  $link_after = isset($args->link_after) ? $args->link_after : '';
+
+  if ( !empty($item->description) ) {
+      // Use the safe version of link after in str_replace
+      $item_output = str_replace($link_after . '</a>', '<span class="walker_nav">' . esc_html($item->description) . '</span>' . $link_after . '</a>', $item_output);
+  }
+  
+  return $item_output;
+}
+add_filter('walker_nav_menu_start_el', 'eb_nav_description', 10, 3);

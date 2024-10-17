@@ -3,23 +3,21 @@
 
  body {
   font-family: "Kaisei Decol", serif;
+  font-size: 15px;
+  line-height: 1.5em;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+
+h1, h2, h3, h4, h5, h6 {
   font-family: "Oswald", sans-serif;
   line-height: 1.5em;
 }
+
 img {
   max-width: 100%;
 }
 
 
-/* Header Area Style */
-#header_area {
+/* Header Area Style */#header_area {
   padding: 15px 0;
 }
 
@@ -34,9 +32,15 @@ img {
   display: inline-block;
   position: relative;
 }
+#header_area .col-md-9 ul li a span {
+  font-family: "Kaisei Decol", serif;
+  display: block;
+  font-size: 13px;
+}
 #header_area .col-md-9 ul li a {
   color: #262626;
   padding: 20px 10px;
+  font-size: 16px;
   display: block;
   text-transform: uppercase;
   text-decoration: none;
@@ -55,6 +59,7 @@ img {
   text-align: left;
   top: 62px;
   width: 200px;
+  z-index: 99999;
 }
 #header_area .col-md-9 ul li:hover ul {
   left: 0px;
@@ -126,4 +131,7 @@ img {
 }
 #header_area.center_menu .col-md-9 ul {
   text-align: center;
+}
+#header_area.center_menu .col-md-9 ul ul {
+  text-align: left;
 }
